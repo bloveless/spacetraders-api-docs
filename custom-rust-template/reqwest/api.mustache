@@ -315,7 +315,7 @@ pub {{#supportAsync}}async {{/supportAsync}}fn {{{operationId}}}(configuration: 
     {{/isMultipart}}
     {{#hasBodyParam}}
     {{#bodyParams}}
-    if Some(body) = {{{paramName}}} {
+    if let Some(body) = {{{paramName}}} {
         local_var_req_builder = local_var_req_builder.json(&body);
     } else {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::CONTENT_LENGTH, 0);
